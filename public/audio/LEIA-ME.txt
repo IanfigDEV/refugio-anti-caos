@@ -1,0 +1,6 @@
+COLOQUE AQUI O ARQUIVO DE ÁUDIO
+
+Salve o mp3 com o nome:  musica.mp3
+(caminho final: public/audio/musica.mp3)
+
+Se quiser outro nome, altere `song.src` em src/config.js.

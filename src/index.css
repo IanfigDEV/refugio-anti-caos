@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink-700 antialiased;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif text-ink-900;
+  }
+
+  ::selection {
+    background: #e8c2b2;
+    color: #2b2540;
+  }
+}
+
+@layer components {
+  /* Gradiente animado, bem lento e sutil (Hero) */
+  .bg-calm-gradient {
+    background: linear-gradient(
+      125deg,
+      #f4effb,
+      #e8f1ea,
+      #fbeee8,
+      #ece6f7,
+      #e6efe9
+    );
+    background-size: 300% 300%;
+    animation: calmShift 28s ease-in-out infinite;
+  }
+
+  /* Botão principal rosé gold */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white shadow-soft transition-transform duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-rosegold-300/60;
+    background: linear-gradient(135deg, #dca790, #c98f78 55%, #b98570);
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+  }
+  .btn-gold:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Efeito vidro fosco */
+  .glass {
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+@keyframes calmShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .bg-calm-gradient {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,6 @@
+COLOQUE AQUI AS IMAGENS
+
+- lulu.png   -> ilustração/foto da Lulu (depois mude `luluImage` em src/config.js)
+- foto1.jpg ... foto6.jpg -> fotos das polaroids (depois preencha `image` em cada foto no src/config.js)
+
+Dica: fotos em torno de 800x1000px (formato retrato) ficam ótimas e carregam rápido.
